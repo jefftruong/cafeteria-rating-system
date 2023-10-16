@@ -2,15 +2,16 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-# QRCodeValidator_test.py
+# createQRCodeFromID_test.py
 
-# tests for QRCodeValidator.py
-import QRCodeValidator
+# tests for createQRCodeFromID.py
+import createQRCodeFromID
 
 
 def test_positive() -> bool:
     # function body
-    suc = QRCodeValidator.read()
+    suc = createQRCodeFromID.create("101520231739")
+
     if suc:
         print("was able to read qr code successfully")
     else:
