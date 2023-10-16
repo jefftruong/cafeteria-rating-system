@@ -14,6 +14,6 @@ def test_positive() -> bool:
     if suc:
         print("was able to read qr code successfully")
     else:
-        print("was able to read qr code unsuccessfully")
+        print("was not able to read qr code")
 
     return True

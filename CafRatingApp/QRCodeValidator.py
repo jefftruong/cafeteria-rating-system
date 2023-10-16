@@ -6,7 +6,7 @@
 
 # IRCodeValidator.py
 
-# IRCodeValidator.read.update function takes four parameter and stores/append to a file name cafRatingDB.txt
+# IRCodeValidator.read function controls the camera and read the qrcode. You should print out the QRCode.
 def read() -> bool:
     # function body
     suc = False
