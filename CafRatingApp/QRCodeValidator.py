@@ -6,11 +6,16 @@
 
 # IRCodeValidator.py
 
-import flask
-app = flask.Flask(__name__)
+# IRCodeValidator.read.update function takes four parameter and stores/append to a file name cafRatingDB.txt
+def read() -> bool:
+    # function body
+    suc = False
+    print("you are in IRCodeValidator.read")
 
-@app.route('/')
-def home():
-    return "ID:12345"
+    print("attempting to read qr code")
+    suc = True
+
+    return suc
+
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
