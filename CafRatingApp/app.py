@@ -24,10 +24,23 @@ def s0():
         # redirect to end the POST handling
         # the redirect can be to the same route or somewhere else
         print("inside s0 python function")
+        return redirect(url_for('s1'))
+
+    # show the form, it wasn't submitted
+    return render_template('s0.html')
+
+
+def s1():
+    if request.method == 'GET':
+        # do stuff when the form is submitted
+
+        # redirect to end the POST handling
+        # the redirect can be to the same route or somewhere else
+        print("inside s1 python function")
         return redirect(url_for('home'))
 
     # show the form, it wasn't submitted
-    return render_template('s0')
+    return render_template('s1.html')
 
 
 if __name__ == '__main__':
