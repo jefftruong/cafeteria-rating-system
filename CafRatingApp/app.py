@@ -16,7 +16,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/s0', methods=['GET', 'POST'])
+@app.route('/s0.html', methods=['GET', 'POST'])
 def s0():
     if request.method == 'POST':
         # do stuff when the form is submitted
@@ -30,8 +30,9 @@ def s0():
     return render_template('s0.html')
 
 
+@app.route('/s1.html', methods=['GET', 'POST'])
 def s1():
-    if request.method == 'GET':
+    if request.method == 'POST':
         # do stuff when the form is submitted
 
         # redirect to end the POST handling
