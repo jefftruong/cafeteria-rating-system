@@ -1,9 +1,19 @@
 <!doctype html>
 <html>
-<body>
+<body onload="setInterval(onTimerElapsed, 3000);">
+
 <h1 style="background-color:DodgerBlue;">thank you</h1>
     <form method="post">
         <button type="submit">Bye!</button>
     </form>
+
+        <script>
+        function onTimerElapsed() {
+        console.log("im in timer elapse function")
+
+       window.location = "http://127.0.0.1:7000/"
+        }
+        </script>
+
 </body>
 </html>
