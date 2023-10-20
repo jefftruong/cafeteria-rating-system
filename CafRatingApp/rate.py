@@ -1,28 +1,36 @@
-# This is a sample Python script.
 from typing import Any
 
+import tempfile
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+temp_file = tempfile.NamedTemporaryFile(delete=False)
+file_path: Any = temp_file.name
+print(file_path)
+with open(file_path, 'w') as file:
+    file.write('id, date, meal, rating')
 
 
-# rate.py
-
-# rate.update function takes four parameter and stores/append to a file name cafRatingDB.txt
-def update(id: Any,
-           date: Any,
-           meal: Any,
-           rating: Any):
+def update(id: any,
+           date: any,
+           meal: any,
+           rating: any):
     # function body
     print("you are in rate.update function")
-    print("parameters passed in are" + id + "," + date + "," + meal + "," + rating)
+    print("parameters passed in are " + id + "," + date + "," + meal + "," + rating)
+    temp_file = tempfile.NamedTemporaryFile(delete=False)
+    file_path: Any = temp_file.name
+    print(file_path)
+    with open(file_path, 'w') as file:
+        file.write('id, date, meal, rating')
 
     return True
 
-# rate.read function takes id and date. The fuction will read the DB and return the associated date associated
+
+# rate.read function takes id and date. The function will read the DB and return the associated date associated
 # with the ID and date.
-def read(id: Any,
-         date: Any) -> list[str]:
+
+
+def read(id: any,
+         date: any) -> list[str]:
     # function body
     print("you are in rate.update function")
     print("parameters passed in are" + id + "," + date)
@@ -30,4 +38,5 @@ def read(id: Any,
     return record
 
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+if not __name__ != '__main__':
+    update("1234", "10182023", "apple", "good")
