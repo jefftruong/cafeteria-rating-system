@@ -2,12 +2,6 @@ from typing import Any
 
 import tempfile
 
-temp_file = tempfile.NamedTemporaryFile(delete=False)
-file_path: Any = temp_file.name
-print(file_path)
-with open(file_path, 'w') as file:
-    file.write('id, date, meal, rating')
-
 
 def update(id: any,
            date: any,
@@ -20,7 +14,7 @@ def update(id: any,
     file_path: Any = temp_file.name
     print(file_path)
     with open(file_path, 'w') as file:
-        file.write('id, date, meal, rating')
+        file.write(id + "," + date + "," + meal + "," + rating)
 
     return True
 
