@@ -10,11 +10,10 @@ def update(id: any,
     # function body
     print("you are in rate.update function")
     print("parameters passed in are " + id + "," + date + "," + meal + "," + rating)
-    temp_file = tempfile.NamedTemporaryFile(delete=False)
-    file_path: Any = temp_file.name
-    print(file_path)
-    with open(file_path, 'w') as file:
-        file.write(id + "," + date + "," + meal + "," + rating)
+    'update.txt'
+    file_path = 'update.txt'
+    with open(file_path, 'a') as file:
+        file.write(f'{id},{date},{meal},{rating}')
 
     return True
 
