@@ -6,7 +6,7 @@
 
 # rate_test.py
 
-import rate
+import rate.py
 import datetime
 
 
