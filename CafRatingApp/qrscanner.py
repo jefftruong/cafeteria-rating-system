@@ -28,7 +28,7 @@ while True:
     print("read is " + success.__str__())
     print(img.__str__())
 
-    cv2.imwrite("./static/Image/scannedQRCode",img)
+    cv2.imwrite("./static/Image/scannedQRCode.png",img)
 
     detector = cv2.QRCodeDetector()
     val, b, c = detector.detectAndDecode(img)
