@@ -1,5 +1,11 @@
+# cameraDisplay.py
 # import the opencv library
+# Import necessary libraries
+from flask import Flask, render_template, Response
 import cv2
+
+# Initialize the Flask app
+app = Flask(__name__)
 
 # define a video capture object
 vid = cv2.VideoCapture(0)
@@ -8,27 +14,31 @@ while True:
 
     # Capture the video frame
     # by frame
-    ret, frame = vid.read()
+    # ret, frame = vid.read()
 
-    # Window name in which image is displayed
-    window_name = 'Image'
+    def gen_frames():
+        while True:
+            success, video_frame = vid.read()  # read the camera frame
+            frame = cv2.flip(video_frame, 1)
+            if not success:
+                break
+            else:
+                ret, buffer = cv2.imencode('.jpg', frame)
+                frame = buffer.tobytes()
+                yield (b'--frame\r\n'
+                       b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n')  # concat frame one by one and show result
 
-    # Using cv2.flip() method
-    # Use Flip code 0 to flip vertically
-    image = cv2.flip(frame, 1)
 
-    # Display the resulting frame
-    # cv2.imshow('frame', window_name)
-    # Displaying the image
-    cv2.imshow(window_name, image)
+    @app.route('/')
+    def index():
+        return render_template('cameraSample.html')
 
-    # the 'q' button is set as the
-    # quitting button you may use any
-    # desired button of your choice
-    if cv2.waitKey(1) & 0xFF == ord('q'):
-        break
 
-# After the loop release the cap object
-vid.release()
-# Destroy all the windows
-cv2.destroyAllWindows()
+    @app.route('/video_feed')
+    def video_feed():
+        return Response(gen_frames(), mimetype='multipart/x-mixed-replace; boundary=frame')
+
+
+    if __name__ == "__main__":
+        app.run(debug=True)
+
