@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:margin-top="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -7,13 +7,16 @@
     <link rel="manifest" href="{{ url_for('static', filename='manifest.webmanifest') }}">
 </head>
 <body>
-<div class="container">
-    <div class="row">
+<!div name="home" class="container">
+    <!div name="about" class="row">
         <div class="col-lg-8  offset-lg-2">
             <h3 class="mt-5">Live Streaming</h3>
-            <img src="{{ url_for('video_feed') }}" width="100%">
+            <img src="{{ url_for('video_feed') }}"
+                 height="1000px"
+                 width="110%"
+                 margin="auto">
         </div>
-    </div>
-</div>
+    <!/div>
+<!/div>
 </body>
 </html>

@@ -2,10 +2,10 @@
 <html>
 <body>
 <h1 style="background-color:DodgerBlue;">how was your school lunch</h1>
-    <form method="post">
+    <form action="{{ url_for('s1') }}" method="post">
         <button type="submit">good!</button>
     </form>
- <form method="post">
+ <form action="{{ url_for('s2') }}" method="post">
         <button type="submit">badly</button>
     </form>
 </body>

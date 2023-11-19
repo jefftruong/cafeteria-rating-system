@@ -38,10 +38,24 @@ def s1():
         # redirect to end the POST handling
         # the redirect can be to the same route or somewhere else
         print("inside s1 python function")
-        return redirect(url_for('home'))
+        return redirect(url_for('s1'))
 
     # show the form, it wasn't submitted
     return render_template('s1.html')
+
+
+@app.route('/s2.html', methods=['GET', 'POST'])
+def s2():
+    if request.method == 'POST':
+        # do stuff when the form is submitted
+
+        # redirect to end the POST handling
+        # the redirect can be to the same route or somewhere else
+        print("inside s2 python function")
+        return redirect(url_for('s2'))
+
+    # show the form, it wasn't submitted
+    return render_template('s2.html')
 
 
 if __name__ == '__main__':
