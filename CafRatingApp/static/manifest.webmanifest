@@ -4,12 +4,12 @@
   "short_name": "WebApp",
   "icons": [
     {
-      "src": "rainbowBackground.png",
+      "src": "/Image/rainbowBackground.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "rainbowBackground.png",
+      "src": "/Image/rainbowBackground.png",
       "sizes": "512x512",
       "type": "image/png"
     }

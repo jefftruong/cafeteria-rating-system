@@ -32,7 +32,7 @@
       "type": "image/png"
     },
     {
-      "src": "../static/Image/multiCulture.jpg",
+      "src": "/Image/multiCulture.jpg",
       "sizes": "192x192",
       "type": "image/png"
     }
