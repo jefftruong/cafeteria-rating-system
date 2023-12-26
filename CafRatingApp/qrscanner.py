@@ -10,7 +10,8 @@ from termcolor import colored
 import webbrowser
 
 # turn on camera and take picture
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+# cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
+cap = cv2.VideoCapture(0)
 
 # Check if the webcam is opened correctly
 print("checking webcam")

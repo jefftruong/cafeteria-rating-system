@@ -4,10 +4,11 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 # Python program to Scan and Read a QR code
 # from qrtools import QR
-#import QRCodeValidator
+# import QRCodeValidator
 import cv2
-#from cv2 import cv2
+# from cv2 import cv2
 import numpy as np
+
 
 # IRCodeValidator.py
 
@@ -32,6 +33,7 @@ def read():
     suc = True
 
     return suc
+
 
 def readcamera():
     # program to capture single image from webcam in python
@@ -73,6 +75,6 @@ def readcamera():
 
 
 if __name__ == '__main__':
-    read()
+    readcamera()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
